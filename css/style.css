@@ -1,0 +1,89 @@
+.nav {
+    align-items: center;
+}
+.nav-item {
+    color: white;
+    cursor: pointer;
+    margin: 0 15px 0 15px;
+    transition: 0.3s;
+}
+.nav-item:hover, .active {
+    color: #dc3545;
+}
+.form-inline {
+    flex-grow: 2;
+    justify-content: flex-end;
+}
+.wrapper {
+    display: flex;
+    margin: 10px 60px;
+} 
+.movies-list {
+    list-style: none;
+    padding: 0;
+}
+.movies-list img {
+    height: 250px;
+    margin: 10px 30px 10px 10px;
+    float: left;
+}
+.film-container {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    padding: 10px;
+    position: relative;
+    transition: 0.3s;
+    height: 300px;
+}
+.film-container:hover {
+    transform: scale(1.02);
+}
+.film-container h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.film-container p {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.film-container span {
+    color: #777;
+}
+.screen {
+    display: none;
+}
+.vote-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+#Trailer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+}
+#Trailer iframe {
+    margin: 10px auto 10px;
+}
+
+@media screen and (max-width: 1225px) {
+    .wrapper {
+        flex-direction: column-reverse;
+
+    }
+    h2 {
+        text-align: center;
+    }
+    #navbarNav {
+        border-top: 1px solid white;
+        padding: 10px;
+    }
+    .nav {
+        flex-direction: column;
+    }
+    .form-inline {
+        justify-content: center;
+    }
+}
