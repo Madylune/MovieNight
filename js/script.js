@@ -147,3 +147,20 @@ function toggleTab(event, screenName) {
 $('.navbar-toggler').click(function() {
     $('#navbarNav').toggle()
 })
+
+function searchMovie() {
+    const search = document.querySelector('#searchBar')
+    let filter = search.value.toUpperCase()
+    const lists = document.querySelectorAll('.movies-list')
+    lists.forEach(list => {
+        const movie = list.getElementsByTagName('li')
+        for (let i = 0; i < movie.length; i++) {
+            let movieTitle = movie[i].getElementsByTagName('h3')[0]
+            if (movieTitle.innerHTML.toUpperCase().indexOf(filter) != -1) {
+                movie[i].style.display = ''
+            } else {
+                movie[i].style.display = 'none'
+            }
+        }
+    })
+}

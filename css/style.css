@@ -1,3 +1,6 @@
+#navbarNav {
+    justify-content: space-between;
+}
 .nav {
     align-items: center;
 }
@@ -10,9 +13,22 @@
 .nav-item:hover, .active {
     color: #dc3545;
 }
-.form-inline {
-    flex-grow: 2;
-    justify-content: flex-end;
+.searchBar-container {
+    width: 60%;
+    text-align: right;
+}
+#searchBar {
+    background-image: url('http://www.stickpng.com/assets/images/585e4ae1cb11b227491c3393.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat; 
+    background-size: 22px;
+    width: 50%;
+    max-height: 40px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 35px;
+    margin-bottom: 12px;
 }
 .wrapper {
     display: flex;
@@ -21,6 +37,9 @@
 .movies-list {
     list-style: none;
     padding: 0;
+}
+.movies-list li {
+    display: block;
 }
 .movies-list img {
     height: 250px;
@@ -83,7 +102,8 @@
     .nav {
         flex-direction: column;
     }
-    .form-inline {
-        justify-content: center;
+    .searchBar-container {
+        width: 100%;
+        text-align: center;
     }
 }
