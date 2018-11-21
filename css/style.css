@@ -3,6 +3,7 @@
 }
 .nav {
     align-items: center;
+    flex-basis: 50%;
 }
 .nav-item {
     color: white;
@@ -14,8 +15,8 @@
     color: #dc3545;
 }
 .searchBar-container {
-    width: 60%;
     text-align: right;
+    flex-basis: 50%;
 }
 #searchBar {
     background-image: url('http://www.stickpng.com/assets/images/585e4ae1cb11b227491c3393.png');
@@ -86,8 +87,25 @@
 #Trailer iframe {
     margin: 10px auto 10px;
 }
+#enSalle {
+    padding: 10px;
+}
+#enSalleList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: space-around;
+}
+#enSalleList img {
+    height: 100px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#enSalleList img:hover {
+    transform: scale(1.4);
+}
 
-@media screen and (max-width: 1225px) {
+@media screen and (max-width: 990px) {
     .wrapper {
         flex-direction: column-reverse;
 
@@ -105,5 +123,11 @@
     .searchBar-container {
         width: 100%;
         text-align: center;
+    }
+    #enSalleList {
+        overflow-y: hidden;
+    }
+    .film-container {
+        overflow: hidden;
     }
 }

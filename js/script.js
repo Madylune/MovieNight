@@ -129,6 +129,10 @@ $.ajax(nowPlaying).done(function (response) {
         filmContainer.appendChild(p)
 
         document.querySelector('#nowplaying-list').appendChild(li)
+
+        let picture = document.createElement('li')
+        picture.append(img)
+        document.querySelector('#enSalleList').appendChild(picture)
     })
 })
 
