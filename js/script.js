@@ -133,19 +133,44 @@ $.ajax(nowPlaying).done(function (response) {
         let picture = document.createElement('li')
         picture.append(img)
         document.querySelector('#enSalleList').appendChild(picture)
+        picture.addEventListener('click', function() {
+            const screens = document.querySelectorAll('.screen')
+            screens.forEach(screen => screen.style.display = 'none')
+            const toSee = document.querySelector('#ToSee')
+            toSee.style.display = 'block'
+            toSee.innerHTML = `<h3>${film.title}</h3>`
+            const video = function showVideo() {
+                fetch(`${API_URL}${film.id}/videos?language=fr&api_key=${API_KEY}`)
+                .then(function(response) {
+                    return response.json()
+                })
+                .then(function(data) {
+                    const results = data.results
+                    let video = document.createElement('iframe')
+                    video.setAttribute('src', `https://www.youtube.com/embed/${results[0].key}`)
+                    video.setAttribute('width', 650)
+                    video.setAttribute('height', 500)
+                    toSee.append(video)
+                })
+            
+            }
+            video()
+            toSee.innerHTML += `<p>${film.overview}</p>`
+            toSee.innerHTML += `<p><button type="button" class="btn btn-outline-danger" onclick='redirectTo()'>Réserver ma place</button></p>`
+        })
     })
 })
 
 function toggleTab(event, screenName) {
-    const screens = document.querySelectorAll('.screen');
+    const screens = document.querySelectorAll('.screen')
     //Hide all screens
-    screens.forEach(screen => screen.style.display = 'none');
+    screens.forEach(screen => screen.style.display = 'none')
     //Manage active class
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => tab.className = tab.className.replace(' active', ''));
+    const tabs = document.querySelectorAll('.tab')
+    tabs.forEach(tab => tab.className = tab.className.replace(' active', ''))
 
-    document.getElementById(screenName).style.display = 'block';
-    event.currentTarget.className += ' active';
+    document.getElementById(screenName).style.display = 'block'
+    event.currentTarget.className += ' active'
 }
 
 $('.navbar-toggler').click(function() {
@@ -167,4 +192,8 @@ function searchMovie() {
             }
         }
     })
+}
+
+function redirectTo() {
+    document.location.href='https://www.cinemaspathegaumont.com/films'
 }
