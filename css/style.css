@@ -117,7 +117,7 @@ hr {
 @media screen and (max-width: 990px) {
     .wrapper {
         flex-direction: column-reverse;
-
+        margin: 10px;
     }
     h2 {
         text-align: center;
@@ -138,5 +138,14 @@ hr {
     }
     .film-container {
         overflow: hidden;
+    }
+    #Trailer {
+        margin-right: 0;
+        align-items: center;
+        width: 100%;
+    }
+    #Trailer iframe {
+        width: 300px!important;
+        height: 200px!important;
     }
 }
